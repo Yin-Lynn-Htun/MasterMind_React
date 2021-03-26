@@ -2,33 +2,33 @@ import _ from 'lodash';
 import React, { useState } from 'react';
 import Holders from './holders/holders';
 import Model from '../components/Model/Model';
-import AnswerHolders from "../components/AnswerHolders/AnswerHolders";
+import AnswerHolders from '../components/AnswerHolders/AnswerHolders';
 
 const Layout = (props) => {
     const [selectedNumber, setSelectedNumber] = useState(0);
     const [answerNumber, setAnswerNumber] = useState({
-        1: ['','','',''],
-        2: ['','','',''],
-        3: ['','','',''],
-        4: ['','','',''],
-        5: ['','','',''],
-        6: ['','','',''],
-        7: ['','','',''],
-        8: ['','','',''],
-        9: ['','','',''],
-        10: ['','','',''],
+        1: ['', '', '', ''],
+        2: ['', '', '', ''],
+        3: ['', '', '', ''],
+        4: ['', '', '', ''],
+        5: ['', '', '', ''],
+        6: ['', '', '', ''],
+        7: ['', '', '', ''],
+        8: ['', '', '', ''],
+        9: ['', '', '', ''],
+        10: ['', '', '', ''],
     });
     const [checkNumber, setCheckNumber] = useState({
-        1: ['dontShow','dontShow','dontShow','dontShow'],
-        2: ['dontShow','dontShow','dontShow','dontShow'],
-        3: ['dontShow','dontShow','dontShow','dontShow'],
-        4: ['dontShow','dontShow','dontShow','dontShow'],
-        5: ['dontShow','dontShow','dontShow','dontShow'],
-        6: ['dontShow','dontShow','dontShow','dontShow'],
-        7: ['dontShow','dontShow','dontShow','dontShow'],
-        8: ['dontShow','dontShow','dontShow','dontShow'],
-        9: ['dontShow','dontShow','dontShow','dontShow'],
-        10: ['dontShow','dontShow','dontShow','dontShow'],
+        1: ['dontShow', 'dontShow', 'dontShow', 'dontShow'],
+        2: ['dontShow', 'dontShow', 'dontShow', 'dontShow'],
+        3: ['dontShow', 'dontShow', 'dontShow', 'dontShow'],
+        4: ['dontShow', 'dontShow', 'dontShow', 'dontShow'],
+        5: ['dontShow', 'dontShow', 'dontShow', 'dontShow'],
+        6: ['dontShow', 'dontShow', 'dontShow', 'dontShow'],
+        7: ['dontShow', 'dontShow', 'dontShow', 'dontShow'],
+        8: ['dontShow', 'dontShow', 'dontShow', 'dontShow'],
+        9: ['dontShow', 'dontShow', 'dontShow', 'dontShow'],
+        10: ['dontShow', 'dontShow', 'dontShow', 'dontShow'],
     });
     const [showModel, setShowModel] = useState('');
     const [counter, setCounter] = useState(1);
@@ -38,12 +38,12 @@ const Layout = (props) => {
     };
 
     const onClickAnswerNumber = (index, rowId) => {
-        if (selectedNumber === 0){
-            setShowModel('error')
-            return
+        if (selectedNumber === 0) {
+            setShowModel('error');
+            return;
         }
 
-        const answer = {...answerNumber};
+        const answer = { ...answerNumber };
         const selectedRow = answer[rowId].slice();
         selectedRow.splice(index, 1, selectedNumber);
         answer[rowId] = selectedRow;
@@ -51,10 +51,9 @@ const Layout = (props) => {
     };
 
     const onCheckAnswer = () => {
-
-        if (answerNumber[counter].includes("")) {
-            setShowModel('fillAll')
-            return
+        if (answerNumber[counter].includes('')) {
+            setShowModel('fillAll');
+            return;
         }
         const answer = [];
         props.correctAnswer.forEach((num, index) => {
@@ -65,10 +64,8 @@ const Layout = (props) => {
 
         if (answer.length === 4) {
             setShowModel('won');
-        }
-
-        if (counter === 10) {
-            setShowModel('lose')
+        } else if (counter === 10) {
+            setShowModel('lose');
         }
 
         let count = 0;
@@ -90,8 +87,8 @@ const Layout = (props) => {
             answer.push('not-contain');
         }
 
-        const check = {...checkNumber};
-        check[counter] = [...answer]
+        const check = { ...checkNumber };
+        check[counter] = [...answer];
         setCheckNumber(check);
         setCounter(counter + 1);
     };
@@ -129,13 +126,33 @@ const Layout = (props) => {
             />
             {answerHolders}
 
-            {showModel !== ''
-                ? showModel === 'won' ? <Model text={'You won'} buttonText={'Play again!'} clicked={onClickPlayAgain} />
-                : showModel === 'lose' ? <Model text={'You lose'} buttonText={'Play again!'} clicked={onClickPlayAgain} />
-                : showModel === 'error' ? <Model text={'Please select a number '} buttonText={'OK!'} clicked={() => setShowModel('')} />
-                : showModel === 'fillAll' ? <Model text={'Please fill all numbers '} buttonText={'OK!'} clicked={() => setShowModel('')} />
-                : null : null
-            }
+            {showModel !== '' ? (
+                showModel === 'won' ? (
+                    <Model
+                        text={'You won'}
+                        buttonText={'Play again!'}
+                        clicked={onClickPlayAgain}
+                    />
+                ) : showModel === 'lose' ? (
+                    <Model
+                        text={'You lose'}
+                        buttonText={'Play again!'}
+                        clicked={onClickPlayAgain}
+                    />
+                ) : showModel === 'error' ? (
+                    <Model
+                        text={'Please select a number '}
+                        buttonText={'OK!'}
+                        clicked={() => setShowModel('')}
+                    />
+                ) : showModel === 'fillAll' ? (
+                    <Model
+                        text={'Please fill all numbers '}
+                        buttonText={'OK!'}
+                        clicked={() => setShowModel('')}
+                    />
+                ) : null
+            ) : null}
         </div>
     );
 };

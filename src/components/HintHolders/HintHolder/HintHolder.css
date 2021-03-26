@@ -3,6 +3,7 @@
     height: 15px;
     border-radius: 50%;
     border: 1px solid black;
+    margin: 3px;
 }
 
 .exact {
@@ -19,4 +20,10 @@
 
 .dontShow {
     display: none;
+}
+
+@media (max-width: 600px) {
+    .holder {
+        margin: 1px;
+    }
 }

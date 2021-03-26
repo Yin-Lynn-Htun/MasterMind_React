@@ -3,16 +3,15 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    margin: 10px auto;
+    margin: 10px 10px;
 }
 
 .disable {
     cursor: not-allowed;
     background-color: lightgray;
-    border: 0;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     .holder {
         border: 2px solid black;
         width: 30px;

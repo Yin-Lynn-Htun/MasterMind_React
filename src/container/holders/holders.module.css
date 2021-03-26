@@ -3,8 +3,7 @@
 }
 .container {
     display: flex;
-    max-width: 70vw;
-    width: 50vw;
+    width: 30vw;
     margin: auto;
     align-items: center;
     justify-content: center;
@@ -12,40 +11,13 @@
 }
 
 .holders {
-    width: 40vw;
+    width: 30vw;
     display: flex;
     margin: auto;
 }
 
-.answerHolder {
-    display: flex;
-    position: relative;
-    max-width: 500px;
-    width: 100px;
-}
-
-.checkBtn {
-    display: inline;
-    background-color: darkblue;
-    text-align: center;
-    border-radius: 5px;
-    border: 0;
-    padding: 10px 30px;
-    margin: auto;
-    color: white;
-    flex: 5;
-}
-
-.checkBtn:active {
-    transform: scale(0.9);
-}
-
-.checkBtn:focus {
-    outline: 0;
-}
-
-@media (max-width: 400px) {
-    .holders{
+@media (max-width: 600px) {
+    .holders {
         width: 70vw;
     }
 }
