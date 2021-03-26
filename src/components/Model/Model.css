@@ -1,0 +1,45 @@
+.container {
+    height: 108vh;
+    width: 100vw;
+    background-color: rgba(128, 128, 128, 0.699);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    top: -10%;
+}
+
+.model {
+    height: 150px;
+    width: 200px;
+    border: 1px solid black;
+    z-index: 110;
+    background-color: white;
+    border-radius: 30px;
+}
+
+.btn {
+    margin: 30px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 0;
+    background-color: skyblue;
+    cursor: pointer;
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:active {
+    transform: scale(0.9);
+}
+
+@media (max-width: 400px) {
+    .container {
+        height: 120%;
+    }
+}

@@ -1,36 +1,78 @@
 import _ from 'lodash';
 import React, { useState } from 'react';
 import Holders from './holders/holders';
+import Model from '../components/Model/Model';
+import AnswerHolders from "../components/AnswerHolders/AnswerHolders";
 
 const Layout = (props) => {
     const [selectedNumber, setSelectedNumber] = useState(0);
-    const [answerNumber, setAnswerNumber] = useState(['', '', '', '']);
-    const [checkNumber, setCheckNumber] = useState(null);
+    const [answerNumber, setAnswerNumber] = useState({
+        1: ['','','',''],
+        2: ['','','',''],
+        3: ['','','',''],
+        4: ['','','',''],
+        5: ['','','',''],
+        6: ['','','',''],
+        7: ['','','',''],
+        8: ['','','',''],
+        9: ['','','',''],
+        10: ['','','',''],
+    });
+    const [checkNumber, setCheckNumber] = useState({
+        1: ['dontShow','dontShow','dontShow','dontShow'],
+        2: ['dontShow','dontShow','dontShow','dontShow'],
+        3: ['dontShow','dontShow','dontShow','dontShow'],
+        4: ['dontShow','dontShow','dontShow','dontShow'],
+        5: ['dontShow','dontShow','dontShow','dontShow'],
+        6: ['dontShow','dontShow','dontShow','dontShow'],
+        7: ['dontShow','dontShow','dontShow','dontShow'],
+        8: ['dontShow','dontShow','dontShow','dontShow'],
+        9: ['dontShow','dontShow','dontShow','dontShow'],
+        10: ['dontShow','dontShow','dontShow','dontShow'],
+    });
+    const [showModel, setShowModel] = useState('');
+    const [counter, setCounter] = useState(1);
 
     const onClickInputNumber = (num) => {
         setSelectedNumber(num);
     };
 
-    const onClickAnswerNumber = (index) => {
-        const answer = answerNumber.slice();
-        answer.splice(index, 1, selectedNumber);
+    const onClickAnswerNumber = (index, rowId) => {
+        if (selectedNumber === 0){
+            setShowModel('error')
+            return
+        }
+
+        const answer = {...answerNumber};
+        const selectedRow = answer[rowId].slice();
+        selectedRow.splice(index, 1, selectedNumber);
+        answer[rowId] = selectedRow;
         setAnswerNumber(answer);
     };
 
     const onCheckAnswer = () => {
-        const answer = {
-            exact: 0,
-            contain: 0,
-        };
 
+        if (answerNumber[counter].includes("")) {
+            setShowModel('fillAll')
+            return
+        }
+        const answer = [];
         props.correctAnswer.forEach((num, index) => {
-            if (num === answerNumber[index]) {
-                answer.exact += 1;
+            if (num === answerNumber[counter][index]) {
+                answer.push('exact');
             }
         });
 
+        if (answer.length === 4) {
+            setShowModel('won');
+        }
+
+        if (counter === 10) {
+            setShowModel('lose')
+        }
+
         let count = 0;
-        const tempAnswer = _.countBy(answerNumber);
+        const tempAnswer = _.countBy(answerNumber[counter]);
         const tempCorrect = _.countBy(props.correctAnswer);
         for (let key in tempCorrect) {
             count += Math.min(tempAnswer[key], tempCorrect[key])
@@ -38,32 +80,62 @@ const Layout = (props) => {
                 : 0;
         }
 
-        answer.contain = count - answer.exact;
-        setCheckNumber(answer);
-
-        if (answer.exact === 4) {
-            alert('Congratulation! You got the correct answer');
+        const l1 = answer.length;
+        for (let i = 0; i < count - l1; i++) {
+            answer.push('contain');
         }
+
+        const l = answer.length;
+        for (let i = 0; i < 4 - l; i++) {
+            answer.push('not-contain');
+        }
+
+        const check = {...checkNumber};
+        check[counter] = [...answer]
+        setCheckNumber(check);
+        setCounter(counter + 1);
     };
 
+    const onClickPlayAgain = () => {
+        setShowModel(false);
+        window.location.reload(false);
+    };
+
+    const answerHolders = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((id) => {
+        return (
+            <AnswerHolders
+                key={id}
+                id={id}
+                numbers={answerNumber[id]}
+                onClickAnswerNumber={onClickAnswerNumber}
+                onCheckAnswer={onCheckAnswer}
+                checkNumber={checkNumber[id]}
+                show={counter === id}
+            />
+        );
+    });
+
     return (
-        <div>
+        <div style={{ position: 'relative' }}>
+            <h1>Master Mind</h1>
             <h3>Current Selected Number : {selectedNumber}</h3>
 
             <h5>Select Number Here : </h5>
             <Holders
-                numbers={[1, 2, 3, 4]}
+                numbers={[1, 2, 3, 4, 5, 6]}
                 onClickInputNumber={onClickInputNumber}
                 answer={false}
                 selectedNumber={selectedNumber}
             />
-            <Holders
-                numbers={answerNumber}
-                onClickAnswerNumber={onClickAnswerNumber}
-                checkAnswer={onCheckAnswer}
-                answer={true}
-                checkNumber={checkNumber}
-            />
+            {answerHolders}
+
+            {showModel !== ''
+                ? showModel === 'won' ? <Model text={'You won'} buttonText={'Play again!'} clicked={onClickPlayAgain} />
+                : showModel === 'lose' ? <Model text={'You lose'} buttonText={'Play again!'} clicked={onClickPlayAgain} />
+                : showModel === 'error' ? <Model text={'Please select a number '} buttonText={'OK!'} clicked={() => setShowModel('')} />
+                : showModel === 'fillAll' ? <Model text={'Please fill all numbers '} buttonText={'OK!'} clicked={() => setShowModel('')} />
+                : null : null
+            }
         </div>
     );
 };

@@ -1,0 +1,17 @@
+.hintHolder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 10vw;
+    position: absolute;
+    left: 10%;
+}
+
+@media (max-width: 400px) {
+    .hintHolder {
+        width: 20vw;
+        display: flex;
+        margin: 0;
+        left: -60%;
+    }
+}

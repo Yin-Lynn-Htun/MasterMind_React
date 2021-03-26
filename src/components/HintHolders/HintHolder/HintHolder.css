@@ -2,6 +2,7 @@
     width: 15px;
     height: 15px;
     border-radius: 50%;
+    border: 1px solid black;
 }
 
 .exact {
@@ -14,4 +15,8 @@
 
 .not-contain {
     background-color: red;
+}
+
+.dontShow {
+    display: none;
 }
