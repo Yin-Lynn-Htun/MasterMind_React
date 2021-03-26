@@ -1,25 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import Layout from './container/layout';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const correctAnswer = Array.from(
+        { length: 4 },
+        () => Math.floor(Math.random() * 4) + 1
+    );
+
+    return (
+        <div className="App">
+            <h1>Master Mind</h1>
+            <Layout correctAnswer={correctAnswer} />
+        </div>
+    );
 }
 
 export default App;

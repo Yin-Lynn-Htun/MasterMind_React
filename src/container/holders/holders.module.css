@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    width: 30vw;
+    margin: auto;
+}
+
+.holders {
+    width: 20vw;
+    display: flex;
+    margin: auto;
+}
+
+.check {
+    width: 50px;
+    background-color: lightgreen;
+    text-align: center;
+    align-items: center;
+    border-radius: 15px;
+}

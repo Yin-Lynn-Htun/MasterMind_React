@@ -1,7 +1,8 @@
 import React from 'react'
 import classes from './holder.module.css'
 
-const Holder = props => {
+const AnswerHolder = props => {
+
     return (
         <div onClick={props.selectNumber.bind(this, props.id)} className={classes.holder}>
             {props.text}
@@ -9,4 +10,4 @@ const Holder = props => {
     )
 }
 
-export default Holder;
+export default AnswerHolder;

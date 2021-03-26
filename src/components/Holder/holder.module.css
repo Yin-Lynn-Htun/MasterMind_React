@@ -1,0 +1,12 @@
+.holder {
+    border: 2px solid black;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+.active {
+    background-color: black;
+    color: white;
+}
