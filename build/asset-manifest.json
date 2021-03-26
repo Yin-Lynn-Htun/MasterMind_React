@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/MasterMind_React/static/css/main.719866a6.chunk.css",
+    "main.js": "/MasterMind_React/static/js/main.c4e6bc7c.chunk.js",
+    "main.js.map": "/MasterMind_React/static/js/main.c4e6bc7c.chunk.js.map",
+    "runtime-main.js": "/MasterMind_React/static/js/runtime-main.1bf331ad.js",
+    "runtime-main.js.map": "/MasterMind_React/static/js/runtime-main.1bf331ad.js.map",
+    "static/js/2.c34ecb3f.chunk.js": "/MasterMind_React/static/js/2.c34ecb3f.chunk.js",
+    "static/js/2.c34ecb3f.chunk.js.map": "/MasterMind_React/static/js/2.c34ecb3f.chunk.js.map",
+    "static/js/3.0a5188f6.chunk.js": "/MasterMind_React/static/js/3.0a5188f6.chunk.js",
+    "static/js/3.0a5188f6.chunk.js.map": "/MasterMind_React/static/js/3.0a5188f6.chunk.js.map",
+    "index.html": "/MasterMind_React/index.html",
+    "static/css/main.719866a6.chunk.css.map": "/MasterMind_React/static/css/main.719866a6.chunk.css.map",
+    "static/js/2.c34ecb3f.chunk.js.LICENSE.txt": "/MasterMind_React/static/js/2.c34ecb3f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1bf331ad.js",
+    "static/js/2.c34ecb3f.chunk.js",
+    "static/css/main.719866a6.chunk.css",
+    "static/js/main.c4e6bc7c.chunk.js"
+  ]
+}
