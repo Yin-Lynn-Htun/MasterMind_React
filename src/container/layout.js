@@ -159,7 +159,7 @@ const Layout = (props) => {
                 ) : showModel === 'showRules' ? (
                     <Model
                         text={
-                            'Try to guess the pattern, in both order and numbers, within ten turns. After submitting a row, a small black peg is placed for each code peg from the guess which is correct in both number and position. A white peg indicates the existence of a correct number peg placed in the wrong position. A red peg indicates the non existence of a correct number placed in the position'
+                            'Try to guess the pattern, in both order and numbers, within ten turns. After submitting a row, a small black peg is placed for each code peg from the guess which is correct in both number and position. A white peg indicates the existence of a correct number peg placed in the wrong position. A red peg indicates a incorrect number is placed in the pegs'
                         }
                         link={
                             'https://en.wikipedia.org/wiki/Mastermind_(board_game)'
