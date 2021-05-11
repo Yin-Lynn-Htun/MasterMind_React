@@ -13,8 +13,9 @@
 }
 
 .model {
-    height: 150px;
-    width: 200px;
+    padding: 20px;
+    height: auto;
+    width: 50%;
     border: 1px solid black;
     z-index: 110;
     background-color: white;
@@ -41,5 +42,9 @@
 @media (max-width: 400px) {
     .container {
         height: 120%;
+    }
+
+    .model {
+        width: 80%;
     }
 }

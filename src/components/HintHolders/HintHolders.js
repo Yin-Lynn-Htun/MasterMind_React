@@ -1,17 +1,16 @@
-import React from 'react';
-import HintHolder from './HintHolder/HintHolder';
-import './HintHolders.css';
+import React from 'react'
+import HintHolder from './HintHolder/HintHolder'
+import './HintHolders.css'
 
 const HintHolders = (props) => {
-    console.log('hintholders');
     return (
         <div className={'hintHolder'}>
             {props.checkNumber.map((type, index) => {
-                return <HintHolder key={index} type={type} />;
+                return <HintHolder key={index} type={type} />
             })}
         </div>
-    );
-};
+    )
+}
 export default React.memo(HintHolders, (prevProps, nextProps) => {
-    return prevProps.checkNumber === nextProps.checkNumber;
-});
+    return prevProps.checkNumber === nextProps.checkNumber
+})
