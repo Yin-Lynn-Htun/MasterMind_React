@@ -7,6 +7,33 @@
 }
 
 .active {
-    background-color: black;
-    color: white;
+    animation: activeHolder 4s infinite;
+    transform: scale(1.4);
+}
+
+@keyframes activeHolder {
+    0% {
+        border-color: #d57424;
+        color: #d57424;
+    }
+
+    25% {
+        border-color: #feda77;
+        color: #feda77;
+    }
+
+    50% {
+        border-color: #dd2a7b;
+        color: #dd2a7b;
+    }
+
+    75% {
+        border-color: #8134af;
+        color: #8134af;
+    }
+
+    100% {
+        border-color: #515bd4;
+        color: #515bd4;
+    }
 }
