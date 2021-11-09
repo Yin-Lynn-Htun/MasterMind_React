@@ -1,0 +1,20 @@
+.title {
+    margin: 20px auto;
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    display: block;
+    width: max-content;
+    background-image: linear-gradient(
+        to bottom right,
+        var(--color1),
+        var(--color2),
+        var(--color3),
+        var(--color4),
+        var(--color5),
+        var(--color6)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
