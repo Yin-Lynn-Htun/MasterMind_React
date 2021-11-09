@@ -1,8 +1,8 @@
-import React from 'react';
-import AnswerHolder from './AnswerHolder/AnswerHolder';
-import classes from './AnswerHolders.module.css';
-import HintHolders from '../HintHolders/HintHolders';
-import _ from 'lodash';
+import React from 'react'
+import AnswerHolder from './AnswerHolder/AnswerHolder'
+import classes from './AnswerHolders.module.css'
+import HintHolders from '../HintHolders/HintHolders'
+import _ from 'lodash'
 
 const AnswerHolders = (props) => {
     const holders = props.numbers.map((number, index) => {
@@ -15,17 +15,17 @@ const AnswerHolders = (props) => {
                 rowId={props.id}
                 selectNumber={props.onClickAnswerNumber}
             />
-        );
-    });
+        )
+    })
 
-    let eleToShow = <HintHolders checkNumber={props.checkNumber} />;
+    let eleToShow = <HintHolders checkNumber={props.checkNumber} />
 
     if (props.show) {
         eleToShow = (
             <button className={classes.checkBtn} onClick={props.onCheckAnswer}>
                 CHECK
             </button>
-        );
+        )
     } else if (
         _.isEqual(props.checkNumber, [
             'dontShow',
@@ -34,27 +34,27 @@ const AnswerHolders = (props) => {
             'dontShow',
         ])
     ) {
-        eleToShow = <div className={classes.box}></div>;
+        eleToShow = <div className={classes.box}></div>
     }
 
-    let buttonClass = [classes.checkBtn];
+    let buttonClass = [classes.checkBtn]
 
     if (!props.show) {
-        buttonClass.push(classes.dontShow);
+        buttonClass.push(classes.dontShow)
     }
 
     return (
-        <div>
-            <div className={classes.container}>
-                <section className={classes.holders}>
+        <>
+            <section className={classes.holders}>
+                <div style={{ display: 'flex', gridColumn: '2 / span 1' }}>
                     {holders}
-                    {eleToShow}
-                </section>
-            </div>
-        </div>
-    );
-};
+                </div>
+                {eleToShow}
+            </section>
+        </>
+    )
+}
 
 export default React.memo(AnswerHolders, (prevProps, nextProps) => {
-    return !nextProps.show && nextProps.checkNumber === prevProps.checkNumber;
-});
+    return !nextProps.show && nextProps.checkNumber === prevProps.checkNumber
+})
