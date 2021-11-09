@@ -1,9 +1,10 @@
 .holder {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     border: 1px solid black;
     margin: 3px;
+    box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.3);
 }
 
 .exact {
@@ -20,6 +21,31 @@
 
 .dontShow {
     display: none;
+}
+
+.postion0 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-65%);
+}
+.postion1 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-65%);
+}
+.postion2 {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-65%);
+}
+.postion3 {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-65%);
 }
 
 @media (max-width: 600px) {
