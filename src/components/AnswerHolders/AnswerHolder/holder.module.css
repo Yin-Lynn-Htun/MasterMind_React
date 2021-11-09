@@ -1,14 +1,42 @@
 .holder {
-    border: 2px solid black;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin: 10px 10px;
+    margin: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 3px solid transparent;
+    animation: activeHolder 3s infinite;
 }
 
 .disable {
     cursor: not-allowed;
-    background-color: lightgray;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: unset;
+}
+
+@keyframes activeHolder {
+    0% {
+        border-color: #d57424;
+    }
+
+    25% {
+        border-color: #feda77;
+    }
+
+    50% {
+        border-color: #dd2a7b;
+    }
+
+    75% {
+        border-color: #8134af;
+    }
+
+    100% {
+        border-color: #515bd4;
+    }
 }
 
 @media (max-width: 600px) {
