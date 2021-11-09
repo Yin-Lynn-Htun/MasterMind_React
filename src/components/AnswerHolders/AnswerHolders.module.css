@@ -7,14 +7,7 @@
 .checkBtn {
     background-color: rgba(0, 0, 0, 0.79);
     color: white;
-    /* background-image: linear-gradient(
-        var(--color1),
-        var(--color4),
-        var(--color6)
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;    */
+    font-family: inherit;
     border-radius: 5px;
     border: 0;
     padding: 15px 20px;
