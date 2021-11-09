@@ -5,7 +5,8 @@
 .holders {
     width: 30vw;
     display: flex;
-    margin: auto;
+    justify-content: space-between;
+    margin: 20px auto;
 }
 
 @media (max-width: 600px) {
