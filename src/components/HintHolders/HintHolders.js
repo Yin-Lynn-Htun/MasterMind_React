@@ -6,11 +6,12 @@ const HintHolders = (props) => {
     return (
         <div className={'hintHolder'}>
             {props.checkNumber.map((type, index) => {
-                return <HintHolder key={index} type={type} />
+                return <HintHolder key={index} id={index} type={type} />
             })}
         </div>
     )
 }
+
 export default React.memo(HintHolders, (prevProps, nextProps) => {
     return prevProps.checkNumber === nextProps.checkNumber
 })
