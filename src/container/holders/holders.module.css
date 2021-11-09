@@ -4,6 +4,7 @@
 
 .holders {
     width: 30vw;
+    min-width: max-content;
     display: flex;
     justify-content: space-between;
     margin: 20px auto;
