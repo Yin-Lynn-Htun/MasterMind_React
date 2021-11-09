@@ -4,6 +4,7 @@ import Holders from './holders/holders'
 import Model from '../components/Model/Model'
 import AnswerHolders from '../components/AnswerHolders/AnswerHolders'
 import Button from '../components/UI/Button'
+import classes from './Layout.module.css'
 
 const Layout = (props) => {
     const [selectedNumber, setSelectedNumber] = useState(0)
@@ -119,9 +120,9 @@ const Layout = (props) => {
 
     return (
         <div style={{ position: 'relative' }}>
-            <h1>Master Mind</h1>
-            <Button text="Show Rules" clicked={onClickShowRuleHandler} />
-            <h3>Current Selected Number : {selectedNumber}</h3>
+            <h1 className={classes.title}>Master Mind</h1>
+            {/* <Button text="Show Rules" clicked={onClickShowRuleHandler} /> */}
+            {/* <h3>Current Selected Number : {selectedNumber}</h3> */}
 
             <Holders
                 numbers={[1, 2, 3, 4, 5, 6]}
@@ -129,6 +130,7 @@ const Layout = (props) => {
                 answer={false}
                 selectedNumber={selectedNumber}
             />
+
             {answerHolders}
 
             {showModel !== '' ? (
