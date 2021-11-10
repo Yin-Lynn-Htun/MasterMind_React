@@ -1,0 +1,39 @@
+.container {
+    overflow-y: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.699);
+    z-index: 100;
+}
+
+.model {
+    position: fixed;
+    padding: 20px;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    height: auto;
+    max-width: 40%;
+    width: max-content;
+    color: white;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background: linear-gradient(134.86deg, rgb(148, 122, 29), rgb(124, 23, 68));
+    box-shadow: -50px 0px 200px 0px var(--color4),
+        50px 0px 200px 10px var(--color1);
+    border-radius: 15px;
+}
+
+@media (max-width: 400px) {
+    .container {
+        height: 120%;
+    }
+
+    .model {
+        width: 80%;
+    }
+}
