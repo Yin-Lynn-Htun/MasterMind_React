@@ -43,7 +43,7 @@ export const displayModel = (showModel, onClickPlayAgain, closeModel) => {
             )
         case 'showRules':
             return (
-                <Model>
+                <Model type="rule">
                     <p>
                         Try to guess the pattern, in both order and numbers,
                         within ten turns. After submitting a row, four hint pegs
