@@ -1,10 +1,10 @@
 import _ from 'lodash'
 import React, { useState } from 'react'
 import Holders from './holders/holders'
-import Model from '../components/Model/Model'
 import AnswerHolders from '../components/AnswerHolders/AnswerHolders'
 import Button from '../components/UI/Button'
 import classes from './Layout.module.css'
+import { displayModel } from './displayModel'
 
 const Layout = (props) => {
     const [selectedNumber, setSelectedNumber] = useState(0)
@@ -32,8 +32,9 @@ const Layout = (props) => {
         9: ['dontShow', 'dontShow', 'dontShow', 'dontShow'],
         10: ['dontShow', 'dontShow', 'dontShow', 'dontShow'],
     })
-    const [showModel, setShowModel] = useState('')
+
     const [counter, setCounter] = useState(1)
+    const [showModel, setShowModel] = useState('')
 
     const onClickInputNumber = (num) => {
         setSelectedNumber(num)
@@ -96,9 +97,13 @@ const Layout = (props) => {
     }
 
     const onClickPlayAgain = () => {
-        setShowModel(false)
+        setShowModel('')
         window.location.reload(false)
     }
+
+    const closeModel = () => [setShowModel('')]
+
+    const model = displayModel(showModel, onClickPlayAgain, closeModel)
 
     const onClickShowRuleHandler = () => {
         setShowModel('showRules')
@@ -121,8 +126,15 @@ const Layout = (props) => {
     return (
         <div style={{ position: 'relative' }}>
             <h1 className={classes.title}>Master Mind</h1>
-            {/* <Button text="Show Rules" clicked={onClickShowRuleHandler} /> */}
-            {/* <h3>Current Selected Number : {selectedNumber}</h3> */}
+            <Button text="Show Rules" clicked={onClickShowRuleHandler} />
+            <h3 className={`${classes.title} ${classes.text}`}>
+                Current Selected Number :{' '}
+                <span
+                    style={{ backgroundColor: `var(--color${classes.number})` }}
+                    className={classes.number}>
+                    {selectedNumber}
+                </span>
+            </h3>
 
             <Holders
                 numbers={[1, 2, 3, 4, 5, 6]}
@@ -132,45 +144,7 @@ const Layout = (props) => {
             />
 
             {answerHolders}
-
-            {showModel !== '' ? (
-                showModel === 'won' ? (
-                    <Model
-                        text={'You won'}
-                        buttonText={'Play again!'}
-                        clicked={onClickPlayAgain}
-                    />
-                ) : showModel === 'lose' ? (
-                    <Model
-                        text={'You lose'}
-                        buttonText={'Play again!'}
-                        clicked={onClickPlayAgain}
-                    />
-                ) : showModel === 'error' ? (
-                    <Model
-                        text={'Please select a number '}
-                        buttonText={'OK!'}
-                        clicked={() => setShowModel('')}
-                    />
-                ) : showModel === 'fillAll' ? (
-                    <Model
-                        text={'Please fill all numbers '}
-                        buttonText={'OK!'}
-                        clicked={() => setShowModel('')}
-                    />
-                ) : showModel === 'showRules' ? (
-                    <Model
-                        text={
-                            'Try to guess the pattern, in both order and numbers, within ten turns. After submitting a row, a small black peg is placed for each code peg from the guess which is correct in both number and position. A white peg indicates the existence of a correct number peg placed in the wrong position. A red peg indicates a incorrect number is placed in the pegs'
-                        }
-                        link={
-                            'https://en.wikipedia.org/wiki/Mastermind_(board_game)'
-                        }
-                        buttonText={'OK!'}
-                        clicked={() => setShowModel('')}
-                    />
-                ) : null
-            ) : null}
+            {model}
         </div>
     )
 }
