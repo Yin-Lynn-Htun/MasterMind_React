@@ -28,3 +28,12 @@
     margin-bottom: 5px;
     display: block;
 }
+
+@media (max-width: 360px) {
+    .title {
+        letter-spacing: 1px;
+    }
+    .text {
+        font-size: 18px;
+    }
+}
