@@ -48,8 +48,9 @@
     transform: translateY(-65%);
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 500px) {
     .holder {
-        margin: 1px;
+        width: 17px;
+        height: 17px;
     }
 }

@@ -29,20 +29,18 @@
 }
 
 @media (max-width: 600px) {
-    .holders {
-        max-width: 100vw;
-        width: 70vw;
-        display: flex;
-        margin: auto;
-        position: relative;
-    }
-
-    .checkBtn {
-        padding: 10px 10px;
-    }
-
     .box {
         width: 60px;
         height: 50px;
+    }
+
+    .holders {
+        grid-template-columns: 1fr max-content 90px 1fr;
+    }
+}
+
+@media (max-width: 420px) {
+    .checkBtn {
+        padding: 10px 15px;
     }
 }

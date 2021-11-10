@@ -35,3 +35,30 @@
         border-color: #515bd4;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .holder {
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .holder {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .holder {
+        width: 37px;
+        height: 37px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .holder {
+        width: 33px;
+        height: 33px;
+    }
+}

@@ -3,15 +3,9 @@
 }
 
 .holders {
-    width: 30vw;
-    min-width: max-content;
+    max-width: max-content;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin: 20px auto;
-}
-
-@media (max-width: 600px) {
-    .holders {
-        width: 70vw;
-    }
 }

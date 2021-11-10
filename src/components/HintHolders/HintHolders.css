@@ -3,17 +3,16 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center; */
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     position: relative;
     align-self: center;
     justify-self: center;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 500px) {
     .hintHolder {
-        display: flex;
         width: 60px;
-        height: 50px;
+        height: 60px;
     }
 }
