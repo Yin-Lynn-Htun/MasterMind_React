@@ -75,7 +75,7 @@ export const displayModel = (showModel, onClickPlayAgain, closeModel) => {
                             }}></span>
                         {'  '}
                         is for each code peg from the guess which is correct in
-                        both number and position.
+                        number but not position.
                     </p>
 
                     <div>
@@ -88,8 +88,8 @@ export const displayModel = (showModel, onClickPlayAgain, closeModel) => {
                                 borderRadius: '50%',
                             }}></span>
                         {'  '}
-                        is for each code peg from the guess which is correct in
-                        both number and position.
+                        is for each code peg from the guess which is incorrect
+                        in both number and position.
                     </div>
                     <Button
                         className={classes.marginCenter}

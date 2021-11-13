@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/MasterMind_React/static/css/main.4c45deaa.chunk.css",
-    "main.js": "/MasterMind_React/static/js/main.2b5a5155.chunk.js",
-    "main.js.map": "/MasterMind_React/static/js/main.2b5a5155.chunk.js.map",
+    "main.css": "/MasterMind_React/static/css/main.8fab7d9c.chunk.css",
+    "main.js": "/MasterMind_React/static/js/main.dc8413db.chunk.js",
+    "main.js.map": "/MasterMind_React/static/js/main.dc8413db.chunk.js.map",
     "runtime-main.js": "/MasterMind_React/static/js/runtime-main.aa382f8e.js",
     "runtime-main.js.map": "/MasterMind_React/static/js/runtime-main.aa382f8e.js.map",
-    "static/js/2.ee317de6.chunk.js": "/MasterMind_React/static/js/2.ee317de6.chunk.js",
-    "static/js/2.ee317de6.chunk.js.map": "/MasterMind_React/static/js/2.ee317de6.chunk.js.map",
+    "static/js/2.e43c997e.chunk.js": "/MasterMind_React/static/js/2.e43c997e.chunk.js",
+    "static/js/2.e43c997e.chunk.js.map": "/MasterMind_React/static/js/2.e43c997e.chunk.js.map",
     "static/js/3.eae90f7b.chunk.js": "/MasterMind_React/static/js/3.eae90f7b.chunk.js",
     "static/js/3.eae90f7b.chunk.js.map": "/MasterMind_React/static/js/3.eae90f7b.chunk.js.map",
     "index.html": "/MasterMind_React/index.html",
-    "static/css/main.4c45deaa.chunk.css.map": "/MasterMind_React/static/css/main.4c45deaa.chunk.css.map",
-    "static/js/2.ee317de6.chunk.js.LICENSE.txt": "/MasterMind_React/static/js/2.ee317de6.chunk.js.LICENSE.txt"
+    "static/css/main.8fab7d9c.chunk.css.map": "/MasterMind_React/static/css/main.8fab7d9c.chunk.css.map",
+    "static/js/2.e43c997e.chunk.js.LICENSE.txt": "/MasterMind_React/static/js/2.e43c997e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.aa382f8e.js",
-    "static/js/2.ee317de6.chunk.js",
-    "static/css/main.4c45deaa.chunk.css",
-    "static/js/main.2b5a5155.chunk.js"
+    "static/js/2.e43c997e.chunk.js",
+    "static/css/main.8fab7d9c.chunk.css",
+    "static/js/main.dc8413db.chunk.js"
   ]
 }
