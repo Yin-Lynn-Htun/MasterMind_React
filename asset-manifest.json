@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/MasterMind_React/static/css/main.8fab7d9c.chunk.css",
-    "main.js": "/MasterMind_React/static/js/main.dc8413db.chunk.js",
-    "main.js.map": "/MasterMind_React/static/js/main.dc8413db.chunk.js.map",
+    "main.js": "/MasterMind_React/static/js/main.2cdefadd.chunk.js",
+    "main.js.map": "/MasterMind_React/static/js/main.2cdefadd.chunk.js.map",
     "runtime-main.js": "/MasterMind_React/static/js/runtime-main.aa382f8e.js",
     "runtime-main.js.map": "/MasterMind_React/static/js/runtime-main.aa382f8e.js.map",
     "static/js/2.e43c997e.chunk.js": "/MasterMind_React/static/js/2.e43c997e.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.aa382f8e.js",
     "static/js/2.e43c997e.chunk.js",
     "static/css/main.8fab7d9c.chunk.css",
-    "static/js/main.dc8413db.chunk.js"
+    "static/js/main.2cdefadd.chunk.js"
   ]
 }
