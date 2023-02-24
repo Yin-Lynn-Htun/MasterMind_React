@@ -10,10 +10,10 @@ import { generateChecker, replaceItemFromArr } from "../utils";
 const DEFAULT_CURRENT_NUMBER = ["", "", "", ""];
 
 const Layout = ({ correctAnswer }) => {
-  const [selectedNumber, setSelectedNumber] = useState(0);
-  const [answerNumber, setAnswerNumber] = useState([]);
-  const [currentSelectedNumber, setCurrentSelectedNumber] = useState(DEFAULT_CURRENT_NUMBER);
   const [showModel, setShowModel] = useState("");
+  const [answerNumber, setAnswerNumber] = useState([]);
+  const [selectedNumber, setSelectedNumber] = useState(0);
+  const [currentSelectedNumber, setCurrentSelectedNumber] = useState(DEFAULT_CURRENT_NUMBER);
 
   const onClickInputNumber = (num) => {
     setSelectedNumber(num);
