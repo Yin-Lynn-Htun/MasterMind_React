@@ -1,17 +1,16 @@
-import React from 'react'
-import classes from './holder.module.css'
+import React from "react";
+import classes from "./holder.module.css";
 
-const Holder = (props) => {
-    return (
-        <div
-            onClick={props.selectNumber.bind(this, props.text)}
-            className={`${classes.holder} ${
-                props.sNumber === props.text && classes.active
-            }`}
-            style={{ backgroundColor: `var(--color${props.text})` }}>
-            {props.text}
-        </div>
-    )
-}
+const Holder = ({ isActive, value, onSelectNumber }) => {
+  return (
+    <div
+      onClick={() => onSelectNumber(value)}
+      className={`${classes.holder} ${isActive && classes.active}`}
+      style={{ backgroundColor: `var(--color${value})` }}
+    >
+      {value}
+    </div>
+  );
+};
 
-export default Holder
+export default Holder;

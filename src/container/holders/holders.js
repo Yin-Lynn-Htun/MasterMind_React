@@ -1,27 +1,23 @@
-import React from 'react';
-import Holder from '../../components/Holder/holder';
-import classes from './holders.module.css';
+import React from "react";
+import Holder from "../../components/Holder/holder";
+import classes from "./holders.module.css";
 
-const Holders = (props) => {
+const numbers = [1, 2, 3, 4, 5, 6];
 
-        const holders = props.numbers.map((number, index) => {
-            return (
-                <Holder
-                    sNumber={props.selectedNumber}
-                    key={index}
-                    text={number}
-                    id={index}
-                    selectNumber={props.onClickInputNumber}
-                />
-            );
-        });
-
-        return (
-            <div>
-                <section className={classes.holders}>{holders}</section>
-            </div>
-        );
-    }
-;
-
+const Holders = ({ onClickInputNumber, selectedNumber }) => {
+  return (
+    <div>
+      <section className={classes.holders}>
+        {numbers.map((number, index) => (
+          <Holder
+            key={index}
+            value={number}
+            isActive={selectedNumber === number}
+            onSelectNumber={onClickInputNumber}
+          />
+        ))}
+      </section>
+    </div>
+  );
+};
 export default Holders;
