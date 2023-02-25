@@ -1,6 +1,5 @@
-import _ from "lodash";
 import React, { useState } from "react";
-import Holders from "./holders/holders";
+import Holders from "../components/Holders/Holders";
 import AnswerHolders from "../components/AnswerHolders/AnswerHolders";
 import Button from "../components/UI/Button";
 import classes from "./Layout.module.css";
@@ -82,23 +81,25 @@ const Layout = ({ correctAnswer }) => {
     <div style={{ position: "relative" }}>
       <h1 className={classes.title}>Master Mind</h1>
       <Button text="Show Rules" clicked={onClickShowRuleHandler} />
-      <h2>Answer : {correctAnswer}</h2>
-      <h3
-        style={{
-          color: "#fff",
-        }}
-        className={classes.text}
-      >
-        Current Selected Number :{" "}
-        <span
-          style={{ backgroundColor: `var(--color${classes.number})` }}
-          className={classes.number}
-        >
-          {selectedNumber}
-        </span>
-      </h3>
 
-      <Holders onClickInputNumber={onClickInputNumber} selectedNumber={selectedNumber} />
+      <div className={classes.header}>
+        <h3
+          style={{
+            color: "#fff",
+          }}
+          className={classes.text}
+        >
+          Current Selected Number :{" "}
+          <span
+            style={{ backgroundColor: `var(--color${classes.number})` }}
+            className={classes.number}
+          >
+            {selectedNumber}
+          </span>
+        </h3>
+
+        <Holders onClickInputNumber={onClickInputNumber} selectedNumber={selectedNumber} />
+      </div>
       {answerHolders}
       {model}
     </div>

@@ -1,25 +1,25 @@
 import React from "react";
-import AnswerHolder from "./AnswerHolder/AnswerHolder";
 import classes from "./AnswerHolders.module.css";
 import HintHolders from "../HintHolders/HintHolders";
+import Holder from "../Holder/Holder";
+import Button from "../UI/Button";
 
-const AnswerHolders = (props) => {
-  const holders = props.numbers.map((number, index) => {
+const AnswerHolders = ({ numbers, checkNumber, onClickAnswerNumber, onCheckAnswer, show }) => {
+  const holders = numbers.map((number, index) => {
     return (
-      <AnswerHolder
-        show={props.show}
+      <Holder
         key={index}
-        num={number}
-        id={index}
-        rowId={props.id}
-        selectNumber={props.onClickAnswerNumber}
+        isActive={show}
+        isDisabled={!show}
+        value={number}
+        onClick={() => onClickAnswerNumber(index)}
       />
     );
   });
 
   let buttonClass = [classes.checkBtn];
 
-  if (!props.show) {
+  if (!show) {
     buttonClass.push(classes.dontShow);
   }
 
@@ -27,12 +27,10 @@ const AnswerHolders = (props) => {
     <>
       <section className={classes.holders}>
         <div style={{ display: "flex", gridColumn: "2 / span 1" }}>{holders}</div>
-        {props.show ? (
-          <button className={classes.checkBtn} onClick={props.onCheckAnswer}>
-            CHECK
-          </button>
+        {show ? (
+          <Button text="Check" clicked={onCheckAnswer} />
         ) : (
-          props.checkNumber && <HintHolders checkNumber={props.checkNumber} />
+          checkNumber && <HintHolders checkNumber={checkNumber} />
         )}
       </section>
     </>

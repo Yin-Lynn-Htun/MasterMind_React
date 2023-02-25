@@ -1,16 +1,16 @@
 .btn {
-    background-color: rgba(0, 0, 0, 0.79);
-    color: white;
-    font-size: 15px;
-    font-family: inherit;
-    border-radius: 5px;
-    border: 0;
-    padding: 15px 20px;
-    align-self: center;
-    justify-self: center;
-    cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.79);
+  color: white;
+  font-size: 15px;
+  font-family: inherit;
+  border-radius: 10px;
+  border: 0;
+  padding: 10px 30px;
+  align-self: center;
+  justify-self: center;
+  cursor: pointer;
 }
 
 .btn:focus {
-    transform: scale(0.9);
+  transform: scale(0.9);
 }

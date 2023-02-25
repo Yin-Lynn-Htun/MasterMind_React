@@ -1,14 +1,14 @@
-import React from 'react'
-import classes from './Model.module.css'
+import React from "react";
+import classes from "./Model.module.css";
 
 const model = (props) => {
-    return (
-        <div
-            style={{ textAlign: props.type === 'rule' && 'start' }}
-            className={`${classes.container} ${props.className}`}>
-            <div className={classes.model}>{props.children}</div>
-        </div>
-    )
-}
+  return (
+    <div className={classes.wrapper}>
+      <div className={classes.container}>
+        <div className={classes.modal}>{props.children}</div>
+      </div>
+    </div>
+  );
+};
 
-export default model
+export default model;

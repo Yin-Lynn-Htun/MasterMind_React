@@ -1,18 +1,75 @@
 .hintHolder {
-    /* display: flex;
+  /* display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center; */
-    width: 70px;
-    height: 70px;
-    position: relative;
-    align-self: center;
-    justify-self: center;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  align-self: center;
+  justify-self: center;
 }
 
 @media screen and (max-width: 500px) {
-    .hintHolder {
-        width: 60px;
-        height: 60px;
-    }
+  .hintHolder {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.holder {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid black;
+  margin: 3px;
+  box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.3);
+}
+
+.exact {
+  background-color: black;
+}
+
+.contain {
+  background-color: white;
+}
+
+.not-contain {
+  background-color: red;
+}
+
+.dontShow {
+  display: none;
+}
+
+.postion0 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-65%);
+}
+.postion1 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-65%);
+}
+.postion2 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-65%);
+}
+.postion3 {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-65%);
+}
+
+@media screen and (max-width: 500px) {
+  .holder {
+    width: 17px;
+    height: 17px;
+  }
 }
